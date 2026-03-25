@@ -1,0 +1,545 @@
+@font-face {
+	font-family: MontserratMedium;
+	src: url(../fonts/Montserrat/Montserrat-Medium.woff2);
+	font-display: swap;
+}
+@font-face {
+	font-family: MontserratBold;
+	src: url(../fonts/Montserrat/Montserrat-Bold.woff2);
+	font-display: swap;
+}
+@font-face {
+	font-family: MontserratBlack;
+	src: url(../fonts/Montserrat/Montserrat-Black.woff2);
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Helvetiva;
+	src: url(../fonts/Helvetica/helvetica-light-587ebe5a59211.woff2);
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Bebas;
+	src: url(../fonts/BebasNeue/BebasNeue-Regular.woff);
+	font-display: swap;
+}
+
+.homeModal,
+.homeModalOverlay {
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	left: 0;
+}
+.homeModal {
+	z-index: 30;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.homeModalOverlay {
+	background-color: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(5px);
+}
+.homeFormContainer {
+	position: relative;
+	z-index: 30;
+	background-color: #fff;
+	color: #000;
+	border-radius: 8px;
+	padding: 20px 40px 40px;
+	width: 100%;
+	max-width: 520px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	margin: 0 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.homeFormTop {
+	display: flex;
+	justify-content: space-between;
+}
+.homeFormTopTitle {
+	font-family: Inter, sans-serif;
+	font-size: clamp(21px, 6.6vw, 24px);
+	margin: 0 0 20px;
+	color: #000;
+	font-weight: 600;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.closeButton {
+	background: 0 0;
+	border: none;
+	cursor: pointer;
+	padding: 4px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: #000;
+}
+.homeFormErrorText {
+	color: #e53e3e;
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.HomeFormRowInput,
+.HomeFormRowLabel {
+	font-family:
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		sans-serif;
+	font-size: 18px;
+}
+.HomeFormRow {
+	margin-bottom: 20px;
+}
+.HomeFormRowLabel {
+	display: block;
+	margin-bottom: 6px;
+	color: #000;
+}
+.HomeFormRowInput {
+	width: 100%;
+	padding: 10px 16px;
+	border: 1px solid #c9c9c9;
+	min-height: 48px;
+	background-color: #f3f7f8;
+	border-radius: 6px;
+	font-weight: 400;
+	outline: 0;
+	height: 50px;
+	transition: border-color 0.2s;
+}
+.HomeFormRowInput:focus {
+	border-color: #e71f1f;
+}
+.HomeFormRowInput::placeholder {
+	color: #aaa;
+}
+.HomeFormBtn {
+	font-family: sans-serif;
+	height: 60px;
+	width: 100%;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: #03a7b2;
+	transition: 0.3s;
+	font-weight: 700;
+	font-size: 28px;
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.phone-input-container {
+	display: flex;
+	align-items: center;
+	position: relative;
+	border: 1px solid #c9c9c9;
+	background-color: transparent;
+	border-radius: 6px;
+}
+.phone-input-container:focus {
+	border-color: #e71f1f;
+}
+.selected-code {
+	display: flex;
+	margin-left: 10px;
+}
+.country-selector {
+	position: relative;
+	margin-right: 10px;
+}
+.selected-country {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	padding-right: 0;
+	border-radius: 6px;
+	cursor: pointer;
+	min-height: 50px;
+	font-family: sans-serif !important;
+	font-size: 18px;
+	font-weight: 400 !important;
+	min-width: max-content;
+	border: none;
+	background-color: transparent;
+}
+.country-dropdown {
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #c9c9c9;
+	border-radius: 6px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	z-index: 40;
+	max-height: 200px;
+	overflow-y: auto;
+	font-family: sans-serif !important;
+	font-weight: 400 !important;
+}
+.country-option {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-weight: 400 !important;
+}
+.country-option:hover {
+	background-color: #f3f7f8;
+}
+.country-option.selected {
+	background-color: #e6f0fa;
+}
+@media screen and (max-width: 768px) {
+	.homeFormContainer {
+		max-width: 100%;
+		padding: 80px 20px 20px;
+		margin: 0;
+		border-radius: 6px;
+		height: 100vh;
+	}
+	.homeFormTopTitle {
+		text-align: center;
+		max-width: 408px;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+	.homeFormTop {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.closeButton {
+		width: 100%;
+		height: 50px;
+		background-color: #000;
+		color: #fff;
+		padding-right: 20px;
+		top: 0;
+		left: 0;
+		justify-content: end;
+	}
+	.homeFormErrorText {
+		font-size: 12px;
+		margin-bottom: 8px;
+	}
+	.HomeFormRowLabel {
+		margin-bottom: 6px;
+	}
+	.HomeFormRowInput {
+		padding: 0 12px;
+		min-height: 40px;
+		background-color: transparent;
+	}
+	.HomeFormRowInput::placeholder {
+		color: #a3a3a3;
+	}
+	.HomeFormBtn {
+		font-size: 18px;
+		font-weight: 700;
+		margin-top: 24px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.homeFormContainer {
+		max-width: 100%;
+		padding: 80px 20px 20px;
+		margin: 0;
+		border-radius: 6px;
+		height: 100vh;
+	}
+	.homeFormTopTitle {
+		text-align: center;
+		margin: 0 auto 15px;
+	}
+	.homeFormErrorText {
+		font-size: 12px;
+		margin-bottom: 8px;
+	}
+	.HomeFormRowLabel {
+		margin-bottom: 6px;
+	}
+	.HomeFormRowInput {
+		padding: 0 12px;
+		min-height: 40px;
+		background-color: transparent;
+		border-radius: 10px;
+	}
+	.HomeFormRowInput::placeholder {
+		color: #a3a3a3;
+	}
+	.HomeFormBtn {
+		font-size: 16px;
+		padding: 10px 0;
+		margin-top: 24px;
+		height: 50px;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.hero {
+	padding-bottom: 15px;
+}
+.hero__container {
+	padding-top: 11px;
+	max-width: 440px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.hero__date {
+	font-family: MontserratMedium;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 100%;
+	text-align: center;
+	margin-bottom: 18px;
+	border: 1px solid #03a7b2;
+	max-width: 179px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 8px;
+	border-radius: 50px;
+}
+.title {
+	font-family: Bebas;
+	font-weight: 400;
+	font-size: clamp(30px, 8vw, 46px);
+	line-height: 110.00000000000001%;
+	text-align: center;
+	color: #000000;
+	margin-bottom: 4px;
+}
+
+.title span {
+	color: #00a3ae;
+}
+.center {
+	background-image: url(../images/hero/wrapper.avif);
+	position: relative;
+}
+
+.wrapper {
+	border: 1px solid #03a7b2;
+	padding: 16px 18px 30px 18px;
+	max-width: 330px;
+	backdrop-filter: blur(20px);
+	border-radius: 20px;
+	margin-top: -116px;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+}
+
+.logo {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center__btn {
+	font-family: Bebas;
+	font-weight: 400;
+	font-size: clamp(26px, 7vw, 32px);
+	line-height: 100%;
+	text-transform: uppercase;
+	padding: 26px 37px 23px 37px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #03a7b2;
+	border: none;
+	color: white;
+	box-shadow: 0px 4px 0px 0px #026a71;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.flex {
+	background-color: #ecfeff;
+	margin-top: -15px;
+	position: relative;
+	padding: 12px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.flex__container {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: max-content;
+	animation: scroll-left 15s linear infinite;
+}
+
+.flex__text {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-family: 'Bebas', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 100%;
+	text-transform: uppercase;
+	color: #000;
+	white-space: nowrap;
+}
+
+.flex__text::before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	background-color: #03a7b2;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(
+			-50%
+		); /* Ro'yxatning yarmini bosib o'tgach qayta boshlanadi */
+	}
+}
+
+.hero__bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	max-width: 334px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #03a7b2;
+	padding: 9px 10px 10px 10px;
+	border-radius: 20px;
+}
+.gift {
+	max-width: 77px;
+	width: 100%;
+	min-height: 80px;
+}
+.hero__bottom__title {
+	font-family: MontserratBlack;
+	font-weight: 900;
+	font-size: 20px;
+	line-height: 23px;
+	text-transform: uppercase;
+}
+.hero__bottom__text {
+	font-family: MontserratMedium;
+	font-weight: 400;
+	font-size: clamp(11px, 2vw, 15px);
+	line-height: 150%;
+}
+.timer {
+	font-family: Helvetica;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 14px;
+}
+
+.work {
+	padding-top: 0px;
+	padding-bottom: 32px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.work__row {
+	max-width: 388px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #000000;
+	margin-bottom: 16px;
+	padding: 8px 17px 8px 18px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-radius: 100px;
+}
+.work__title {
+	font-family: Bebas;
+	font-weight: 400;
+	font-size: 60px;
+	line-height: 100%;
+	position: relative;
+}
+.sticky {
+	position: absolute;
+	top: 20px;
+	left: -4px;
+}
+.work__text {
+	font-family: MontserratMedium;
+	font-weight: 400;
+	font-size: clamp(10px, 3vw, 15px);
+	line-height: 150%;
+}
+.work__btn {
+	font-family: Bebas;
+	font-weight: 400;
+	font-size: clamp(26px, 7vw, 32px);
+	line-height: 100%;
+	text-transform: uppercase;
+	padding: 26px 37px 23px 37px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #03a7b2;
+	border: none;
+	color: white;
+	box-shadow: 0px 4px 0px 0px #026a71;
+	border-radius: 20px;
+	cursor: pointer;
+	max-width: 358px;
+	width: 100%;
+}
