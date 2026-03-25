@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a</title>
+  <style>
+    @font-face {
+      font-family: SF Pro Display;
+      src: url(./fonts/font_1/SFPRODISPLAYMEDIUM.woff2);
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: Cabrito;
+      src: url(./fonts/font_2/CabritoContrast-Medium.woff2);
+      font-display: swap;
+    }
+
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #281f00;
+    }
+
+    .container {
+      max-width: 390px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .header {
+      padding-top: 16px;
+      padding: 12px;
+    }
+
+    .header__container {
+      background-color: #ffffff;
+      max-width: 370px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      padding: 7px 16px 9px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header__logo {
+      display: flex;
+      max-width: clamp(120px, 4vw, 138px);
+      width: 100%;
+    }
+
+    .header__right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header__right__text {
+      font-family: SF Pro Display;
+      font-weight: 400;
+      font-size: clamp(10px, 3vw, 14px);
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 357px) {
+      .header__logo {
+        display: flex;
+        max-width: clamp(100px, 4vw, 138px);
+        width: 100%;
+      }
+
+      .header__right__text {
+        font-family: SF Pro Display;
+        font-weight: 400;
+        font-size: clamp(10px, 2vw, 14px);
+        line-height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .header__container {
+        background-color: #ffffff;
+        max-width: 370px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding: 7px 16px 9px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 9px;
+      }
+    }
+.hero {
+      padding-top: 12px;
+      padding-bottom: 8px;
+      min-height: 275px; 
+    }
+
+    .hero__title {
+      font-family: Cabrito;
+      font-weight: 500;
+      font-size: clamp(31px, 4vw, 36px);
+      line-height: 120%;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .title__span {
+      color: #fee4a5;
+    }
+
+    .hero__text {
+      font-family: SF Pro Display, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .hero__img {
+      width: 100%;
+      /* Rasmning o'lcham nisbatini brauzerga oldindan aytamiz */
+      aspect-ratio: 350 / 275; 
+      margin-bottom: 8px;
+      object-fit: cover;
+      border-radius: 15px;
+      /* Rasm yuklangandan keyin paydo bo'lishini yanada silliq qiladi */
+      content-visibility: auto; 
+    }
+
+    .hero__row {
+      position: relative;
+    }
+
+    .hero__btn {
+      background: linear-gradient(93.1deg,
+          #ffca85 -12.09%,
+          #fde7ca 51.33%,
+          rgba(255, 189, 103, 0.99) 101.95%);
+      color: #5c5346;
+      font-family: sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(20px, 4vw, 22px);
+      padding: 33px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 0 #c49a63;
+      transition: all 0.15s ease;
+      max-width: 350px;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    /* .gold-button o'rniga .hero__btn ishlatganing ma'qul, agar HTML da shu klass bo'lsa */
+    .hero__btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 0 #c49a63;
+    }
+
+    .hero__taqdimot {
+      font-family: SF Pro Display;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: #ffffff;
+      margin-left: 16px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: -15px;
+      right: 25px;
+    }
+
+    .timer {
+      font-family: Cabrito;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 100%;
+      text-transform: uppercase;
+      margin-top: 24px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .timer-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 374px) {
+      .hero {
+        min-height: 220px; 
+      }
+      
+      .hero__btn {
+        font-size: clamp(16px, 2vw, 22px);
+        padding: 33px 20px;
+      }
+
+      .hero__taqdimot {
+        font-size: clamp(14px, 2vw, 16px);
+        margin-left: 13px;
+      }
+
+      .arrow {
+        top: -8px;
+        right: 7px;
+        max-width: 60px;
+      }
+    }
+
+    .project {
+      padding-top: 8px;
+      padding-bottom: 25px;
+    }
+
+    .project__title {
+      font-family: Cabrito;
+      font-weight: 500;
+      font-size: clamp(27px, 3vw, 32px);
+      line-height: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .project__row {
+      max-width: 320px;
+      width: 100%;
+      background-color: #ffffff;
+      margin-bottom: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 7px 0 7px 7px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .project__row__images {
+      max-width: 67px;
+      width: 100%;
+      background-color: #15495e;
+      border-radius: 10px;
+    }
+
+    .project__row__img {
+      margin-bottom: -4px;
+    }
+
+    .project__row__text {
+      font-family: SF Pro Display;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      max-width: 199px;
+      width: 100%;
+    }
+
+    .project__row__text__school {
+      font-family: SF Pro Display;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      max-width: 155px;
+      width: 100%;
+    }
+
+    .project__btn {
+      background: linear-gradient(93.1deg,
+          #ffca85 -12.09%,
+          #fde7ca 51.33%,
+          rgba(255, 189, 103, 0.99) 101.95%);
+      color: #5c5346;
+      font-family: sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(20px, 4vw, 22px);
+      padding: 33px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 0 #c49a63;
+      transition: all 0.15s ease;
+      max-width: 350px;
+      width: 100%;
+      margin-bottom: 0px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .gold-button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 0 #c49a63;
+    }
+
+    @media (max-width:374px) {
+      .project__btn {
+        background: linear-gradient(93.1deg,
+            #ffca85 -12.09%,
+            #fde7ca 51.33%,
+            rgba(255, 189, 103, 0.99) 101.95%);
+        color: #5c5346;
+        font-family: sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: clamp(16px, 2vw, 22px);
+        padding: 33px 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 4px 0 0 #c49a63;
+        transition: all 0.15s ease;
+        max-width: 350px;
+        width: 100%;
+        margin-bottom: 0px;
+        cursor: pointer;
+        margin-top: 8px;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="./css/main.css" />
+  </noscript>
+
+</head>
+<body>
+
+  <div class="header">
+    <div class="header__container container">
+      <a href="./index.html">
+        <img src="./img/header__logo.svg" alt="Logo" class="header__logo" width="120" height="27">
+      </a>
+      <div class="header__right">
+        <p class="header__right__text">
+          <img src="./img/calendar.svg" alt="" width="14" height="14">
+          27-Mart
+        </p>
+        <p class="header__right__text">
+          <img src="./img/time.svg" alt="" width="14" height="14">
+          Soat: 20:00
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <main>
+    <section class="hero">
+      <div class="hero__container container">
+        <h2 class="hero__title">10 yillik tajribaga ega quruvchilar <span class="title__span">endi piskentda!</span> </h2>
+        <p class="hero__text">Yopiq taqdimotga qo’shiling</p>
+       <img src="./img/hero__img.webp" alt="Hero" class="hero__img" width="350" height="275">
+        <button class="hero__btn">taqdimotga qo’shilish</button>
+        <div class="hero__row">
+          <p class="hero__taqdimot">Uylar haqida to’liq malumot olish uchun <br> yopiq <b>Telegram kanalga qo’shiling</b>
+          </p>
+          <img src="./img/image__arrow.svg" alt="HeroArrwo" class="arrow">
+        </div>
+        <div class="timer-container">
+          <p class="timer" id="timer">01:58</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="project">
+      <div class="project__container container">
+        <div class="project__inner">
+          <h2 class="project__title">Loyiha qulayliklari</h2>
+          <div class="project__row">
+            <div class="project__row__images">
+              <img src="./img/project__img__1.avif" alt="img" class="project__row__img" width="67" height="66">
+            </div>
+            <p class="project__row__text__school">Farzandingiz uchun <b>Maktab</b> va <b>Bog’cha</b></p>
+          </div>
+          <div class="project__row">
+            <div class="project__row__images">
+              <img src="./img/project__img__2.avif" alt="img" class="project__row__img" width="67" height="66">
+            </div>
+            <p class="project__row__text"><b>Shahar markazidagi</b> uylar kabi sharoitlarga ega</p>
+          </div>
+          <div class="project__row">
+            <div class="project__row__images">
+              <img src="./img/project__img__3.avif" alt="img" class="project__row__img" width="67" height="66">
+            </div>
+            <p class="project__row__text"><b>Boshlang’ich to’lovsiz</b> oyiga 3 mln 800 ming so’mdan</p>
+          </div>
+        </div>
+        <button class="project__btn">taqdimotga qo’shilish</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let initialTime = 118
+    let timeLeft = initialTime
+    const timerDisplay = document.getElementById('timer')
+
+    updateDisplay(timeLeft)
+
+    const countdown = setInterval(() => {
+      timeLeft--
+
+      if (timeLeft < 0) {
+        timeLeft = initialTime
+        updateDisplay(timeLeft)
+      } else {
+        updateDisplay(timeLeft)
+      }
+    }, 1000)
+
+    function updateDisplay(time) {
+      let minutes = Math.floor(time / 60)
+      let seconds = time % 60
+
+      let displayMinutes = minutes < 10 ? '0' + minutes : minutes
+      let displaySeconds = seconds < 10 ? '0' + seconds : seconds
+
+      timerDisplay.textContent = displayMinutes + ':' + displaySeconds
+    }
+  </script>
+</body>
+
+</html>

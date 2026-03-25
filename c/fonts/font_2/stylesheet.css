@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Bold.eot');
+    src: local('Cabrito Contrast Bold'), local('CabritoContrast-Bold'),
+        url('CabritoContrast-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Bold.woff2') format('woff2'),
+        url('CabritoContrast-Bold.woff') format('woff'),
+        url('CabritoContrast-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Medium.eot');
+    src: local('Cabrito Contrast Medium'), local('CabritoContrast-Medium'),
+        url('CabritoContrast-Medium.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Medium.woff2') format('woff2'),
+        url('CabritoContrast-Medium.woff') format('woff'),
+        url('CabritoContrast-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Black.eot');
+    src: local('Cabrito Contrast Black'), local('CabritoContrast-Black'),
+        url('CabritoContrast-Black.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Black.woff2') format('woff2'),
+        url('CabritoContrast-Black.woff') format('woff'),
+        url('CabritoContrast-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Light.eot');
+    src: local('Cabrito Contrast Light'), local('CabritoContrast-Light'),
+        url('CabritoContrast-Light.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Light.woff2') format('woff2'),
+        url('CabritoContrast-Light.woff') format('woff'),
+        url('CabritoContrast-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-DemiBoldItalic.eot');
+    src: local('Cabrito Contrast DemiBold Italic'), local('CabritoContrast-DemiBoldItalic'),
+        url('CabritoContrast-DemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-DemiBoldItalic.woff2') format('woff2'),
+        url('CabritoContrast-DemiBoldItalic.woff') format('woff'),
+        url('CabritoContrast-DemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-ThinItalic.eot');
+    src: local('Cabrito Contrast Thin Italic'), local('CabritoContrast-ThinItalic'),
+        url('CabritoContrast-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-ThinItalic.woff2') format('woff2'),
+        url('CabritoContrast-ThinItalic.woff') format('woff'),
+        url('CabritoContrast-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Regular.eot');
+    src: local('Cabrito Contrast Regular'), local('CabritoContrast-Regular'),
+        url('CabritoContrast-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Regular.woff2') format('woff2'),
+        url('CabritoContrast-Regular.woff') format('woff'),
+        url('CabritoContrast-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast Book';
+    src: url('CabritoContrast-BookItalic.eot');
+    src: local('Cabrito Contrast Book Italic'), local('CabritoContrast-BookItalic'),
+        url('CabritoContrast-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-BookItalic.woff2') format('woff2'),
+        url('CabritoContrast-BookItalic.woff') format('woff'),
+        url('CabritoContrast-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast Book';
+    src: url('CabritoContrast-Book.eot');
+    src: local('Cabrito Contrast Book'), local('CabritoContrast-Book'),
+        url('CabritoContrast-Book.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Book.woff2') format('woff2'),
+        url('CabritoContrast-Book.woff') format('woff'),
+        url('CabritoContrast-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-MediumItalic.eot');
+    src: local('Cabrito Contrast Medium Italic'), local('CabritoContrast-MediumItalic'),
+        url('CabritoContrast-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-MediumItalic.woff2') format('woff2'),
+        url('CabritoContrast-MediumItalic.woff') format('woff'),
+        url('CabritoContrast-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-BoldItalic.eot');
+    src: local('Cabrito Contrast Bold Italic'), local('CabritoContrast-BoldItalic'),
+        url('CabritoContrast-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-BoldItalic.woff2') format('woff2'),
+        url('CabritoContrast-BoldItalic.woff') format('woff'),
+        url('CabritoContrast-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-DemiBold.eot');
+    src: local('Cabrito Contrast DemiBold'), local('CabritoContrast-DemiBold'),
+        url('CabritoContrast-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-DemiBold.woff2') format('woff2'),
+        url('CabritoContrast-DemiBold.woff') format('woff'),
+        url('CabritoContrast-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-LightItalic.eot');
+    src: local('Cabrito Contrast Light Italic'), local('CabritoContrast-LightItalic'),
+        url('CabritoContrast-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-LightItalic.woff2') format('woff2'),
+        url('CabritoContrast-LightItalic.woff') format('woff'),
+        url('CabritoContrast-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-BlackItalic.eot');
+    src: local('Cabrito Contrast Black Italic'), local('CabritoContrast-BlackItalic'),
+        url('CabritoContrast-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-BlackItalic.woff2') format('woff2'),
+        url('CabritoContrast-BlackItalic.woff') format('woff'),
+        url('CabritoContrast-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-RegularItalic.eot');
+    src: local('Cabrito Contrast Regular Italic'), local('CabritoContrast-RegularItalic'),
+        url('CabritoContrast-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-RegularItalic.woff2') format('woff2'),
+        url('CabritoContrast-RegularItalic.woff') format('woff'),
+        url('CabritoContrast-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cabrito Contrast';
+    src: url('CabritoContrast-Thin.eot');
+    src: local('Cabrito Contrast Thin'), local('CabritoContrast-Thin'),
+        url('CabritoContrast-Thin.eot?#iefix') format('embedded-opentype'),
+        url('CabritoContrast-Thin.woff2') format('woff2'),
+        url('CabritoContrast-Thin.woff') format('woff'),
+        url('CabritoContrast-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
