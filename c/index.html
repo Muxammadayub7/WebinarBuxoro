@@ -19,13 +19,13 @@
     }
 
     * {
-      margin: 0; 
+      margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      background-color: #281f00;
+      background-color: #311F1D;
     }
 
     .container {
@@ -108,16 +108,17 @@
         gap: 9px;
       }
     }
-.hero {
+
+    .hero {
       padding-top: 12px;
       padding-bottom: 8px;
-      min-height: 275px; 
+      min-height: 275px;
     }
 
     .hero__title {
       font-family: Cabrito;
       font-weight: 500;
-      font-size: clamp(31px, 4vw, 36px);
+      font-size: clamp(24px, 7vw, 36px);
       line-height: 120%;
       text-transform: uppercase;
       color: #ffffff;
@@ -140,12 +141,12 @@
     .hero__img {
       width: 100%;
       /* Rasmning o'lcham nisbatini brauzerga oldindan aytamiz */
-      aspect-ratio: 350 / 275; 
+      aspect-ratio: 350 / 275;
       margin-bottom: 8px;
       object-fit: cover;
       border-radius: 15px;
       /* Rasm yuklangandan keyin paydo bo'lishini yanada silliq qiladi */
-      content-visibility: auto; 
+      content-visibility: auto;
     }
 
     .hero__row {
@@ -213,9 +214,9 @@
 
     @media (max-width: 374px) {
       .hero {
-        min-height: 220px; 
+        min-height: 220px;
       }
-      
+
       .hero__btn {
         font-size: clamp(16px, 2vw, 22px);
         padding: 33px 20px;
@@ -345,12 +346,13 @@
       }
     }
   </style>
-<link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="./css/main.css" />
   </noscript>
 
 </head>
+
 <body>
 
   <div class="header">
@@ -360,59 +362,56 @@
       </a>
       <div class="header__right">
         <p class="header__right__text">
-          <img src="./img/calendar.svg" alt="" width="14" height="14">
+          <img src="./img/calendar.svg" alt="" width="14" height="14" loading="lazy">
           27-Mart
         </p>
         <p class="header__right__text">
-          <img src="./img/time.svg" alt="" width="14" height="14">
+          <img src="./img/time.svg" alt="" width="14" height="14" loading="lazy">
           Soat: 20:00
         </p>
       </div>
     </div>
   </div>
-  
+
   <main>
     <section class="hero">
       <div class="hero__container container">
-        <h2 class="hero__title">10 yillik tajribaga ega quruvchilar <span class="title__span">endi piskentda!</span> </h2>
+        <h2 class="hero__title">DubaY va Toshkent <br> qurilish standartlari <br>
+          — endi Buxoroda </h2>
         <p class="hero__text">Yopiq taqdimotga qo’shiling</p>
-       <img src="./img/hero__img.webp" alt="Hero" class="hero__img" width="350" height="275">
-        <button class="hero__btn">taqdimotga qo’shilish</button>
-        <div class="hero__row">
-          <p class="hero__taqdimot">Uylar haqida to’liq malumot olish uchun <br> yopiq <b>Telegram kanalga qo’shiling</b>
-          </p>
-          <img src="./img/image__arrow.svg" alt="HeroArrwo" class="arrow">
-        </div>
+        <img src="./img/hero__logo.avif" alt="Hero" class="hero__img" width="350" height="275" fetchpriority="high"
+          decoding="async">
+        <button class="hero__btn">Bepul qatnashish</button>
         <div class="timer-container">
           <p class="timer" id="timer">01:58</p>
         </div>
       </div>
     </section>
-  
+
     <section class="project">
       <div class="project__container container">
         <div class="project__inner">
-          <h2 class="project__title">Loyiha qulayliklari</h2>
+          <h2 class="project__title">Sizni kutmoqda:</h2>
           <div class="project__row">
             <div class="project__row__images">
-              <img src="./img/project__img__1.avif" alt="img" class="project__row__img" width="67" height="66">
+              <img src="./img/home.avif" alt="img" class="project__row__img" width="67" height="66" loading="lazy" decoding="async">
             </div>
-            <p class="project__row__text__school">Farzandingiz uchun <b>Maktab</b> va <b>Bog’cha</b></p>
+            <p class="project__row__text__school">Loyihaning to‘liq taqdimoti render, <b>reja va infratuzilma</b> </p>
           </div>
           <div class="project__row">
             <div class="project__row__images">
-              <img src="./img/project__img__2.avif" alt="img" class="project__row__img" width="67" height="66">
+              <img src="./img/dollar.avif" alt="img" class="project__row__img" width="67" height="66" loading="lazy" decoding="async">
             </div>
-            <p class="project__row__text"><b>Shahar markazidagi</b> uylar kabi sharoitlarga ega</p>
+            <p class="project__row__text"><b>Narxlar, <b>bo‘lib to‘lash</b> va <b>boshlang‘ich to‘lov</b> shartlari</p>
           </div>
           <div class="project__row">
             <div class="project__row__images">
-              <img src="./img/project__img__3.avif" alt="img" class="project__row__img" width="67" height="66">
+              <img src="./img/xolodnik.avif" alt="img" class="project__row__img" width="67" height="66" loading="lazy" decoding="async">
             </div>
-            <p class="project__row__text"><b>Boshlang’ich to’lovsiz</b> oyiga 3 mln 800 ming so’mdan</p>
+            <p class="project__row__text">Birinchi xaridorlarimizga <b>maishiy texnika to’plamlarini sovg’a qilamiz</b> </p>
           </div>
         </div>
-        <button class="project__btn">taqdimotga qo’shilish</button>
+        <button class="project__btn">Bepul qatnashish</button>
       </div>
     </section>
   </main>
