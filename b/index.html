@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>b</title>
+  <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="./css/main.css" />
+  </noscript>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__texts">
+        <p class="hero__texts__text"><img src="./images/calendar.svg" alt="calendar" width="20" height="20"
+            loading="lazy" decoding="async">27-Mart</p>
+        <p class="hero__texts__text"><img src="./images/time.svg" alt="time" width="16" height="16" loading="lazy"
+            decoding="async">Soat: 20:00</p>
+      </div>
+      <h2 class="hero__title">Shov-shuvlarga sabab <br> bo'lgan <span>Baxtiyor Zaripovdan <br> Anor Residence</span>
+        kottedjlari
+      </h2>
+      <div class="hero__inner">
+        <div class="hero__row">
+          <p class="hero__row__text">
+            Birinchi 10 ta xaridorlarimiz <br> uchun 6 000$ real chegirma!
+          </p>
+          <div class="hero__col">
+            <img src="./images/star.svg" alt="star" width="21" height="21" loading="lazy" decoding="async" class="star">
+            <p class="col__text">Loyihaning to‘liq taqdimoti <br> render, <b>reja va infratuzilma</b></p>
+          </div>
+          <div class="hero__col">
+            <img src="./images/star.svg" alt="star" width="21" height="21" loading="lazy" decoding="async" class="star">
+            <p class="col__text">Narxlar, <b>bo‘lib to‘lash</b> va <br> <b>boshlang‘ich to‘lov shartlari</b></p>
+          </div>
+          <div class="hero__col">
+            <img src="./images/star.svg" alt="star" width="21" height="21" loading="lazy" decoding="async" class="star">
+            <p class="col__text">Birinchi xaridorlarimizga <br> <b> maishiy texnika</b> <br> <b>to’plamlarini sovg’a
+                qilamiz</b></p>
+          </div>
+          <div class="timer-container">
+            <p class="timer" id="countdown">01:59</p>
+          </div>
+        </div>
+        <img src="./images/logo.avif" alt="logo" class="logo" width="220" height="369" fetchpriority="high"
+          decoding="async">
+      </div>
+      <div class="gradinet">
+        <button class="btn" id="open">BEPUL QATNASHISH</button>
+      </div>
+      <p class="hero__relative">Bepul qatnashish uchun bosing <img src="./images/arrow.svg" alt="arrow" width="68"
+          height="68" loading="lazy" decoding="async" class="relative__img"></p>
+
+      <div class="bottom">
+        <img src="./images/gift.avif" alt="gift" width="76" height="83" loading="lazy" decoding="async">
+        <div class="bottom__flex">
+          <h4 class="bottom__flex__title">maxsus sovg’a</h4>
+          <p class="bottom__flex__text">Birinchi 10 ta xaridorlarimiz uchun <br> 6 000$ real chegirma!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="registrationModal" class="homeModal" style="display: none">
+    <div class="homeModalOverlay"></div>
+    <div class="homeFormContainer">
+      <button class="closeButton" id="closeModalBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M1 1.00001L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="homeFormTop">
+        <h1 class="homeFormTopTitle">
+          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+        </h1>
+      </div>
+      <form id="registrationForm" name="contact-form">
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
+          <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
+            autocomplete="name" />
+          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+        </div>
+
+        <div class="HomeFormRow">
+          <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+          <div class="phone-input-container">
+            <button type="button" class="selected-country" id="selectedCountry">
+              <div id="selectedCountryFlag" style="display: flex; align-items: center;"></div>
+              <span class="selected-code" id="selectedCountryCodeText">+998</span>
+            </button>
+            <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
+            <div class="phone-field" style="flex: 1;">
+              <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
+                placeholder="88 888 88 88" autocomplete="tel"
+                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+            </div>
+          </div>
+          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+        </div>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/phoneFormatter.js"></script>
+  <script defer src="./js/app.js"></script>
+  <script src="./js/thankYou.js"></script>
+
+</body>
+
+</html>

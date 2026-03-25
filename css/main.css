@@ -162,7 +162,7 @@
 	100% {
 		transform: translateX(
 			-50%
-		); /* Ro'yxatning yarmini bosib o'tgach qayta boshlanadi */
+		);
 	}
 }
 
