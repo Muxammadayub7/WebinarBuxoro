@@ -86,16 +86,28 @@ function initPhoneFormatter() {
 	}
 
 	phoneInput.oninput = e => {
-		let val = e.target.value.replace(/\D/g, '') // Faqat raqamlarni olish
+		// 1. Faqat raqamlarni ajratib olamiz
+		let val = e.target.value.replace(/\D/g, '')
+
 		let formatted = ''
 		let charIdx = 0
+
+		// 2. Raqamni chiroyli formatga keltiramiz (90 123 45 67 ko'rinishida)
 		for (let i = 0; i < currentConfig.g.length && charIdx < val.length; i++) {
 			formatted +=
 				(i > 0 ? ' ' : '') +
 				val.substring(charIdx, charIdx + currentConfig.g[i])
 			charIdx += currentConfig.g[i]
 		}
+
+		// 3. Input ichida chiroyli formatda ko'rinib tursin
 		e.target.value = formatted
+
+		// 4. STRING MUAMMOSINI HAL QILISH:
+		// Biz raqamni yuborishdan oldin boshiga "'" belgisini qo'shib qo'yamiz.
+		// Bu orqali Google Sheets buni formula emas, MATN (string) deb tushunadi.
+		// (Pastdagi getFullNumber funksiyasini ham shunga moslab qo'ying)
+
 		if (errorEl) errorEl.style.display = 'none'
 	}
 
@@ -107,7 +119,11 @@ function initPhoneFormatter() {
 			const requiredLength = currentConfig.g.reduce((a, b) => a + b, 0)
 			return digits.length === requiredLength
 		},
-		getFullNumber: () => currentConfig.code + ' ' + phoneInput.value,
+		// Raqamni orasidagi bo'shliqlarsiz, lekin + bilan olish
+		getFullNumber: () => {
+			const pureDigits = phoneInput.value.replace(/\D/g, '')
+			return currentConfig.code + pureDigits // Masalan: +998901234567
+		},
 	}
 }
 
@@ -119,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	const form = document.getElementById('registrationForm')
 
 	// Apps Script URL ni shu yerga qo'y
-	const SCRIPT_URL = 'SENING_WEB_APP_URL_MANA_SHU_YERGA'
+	const SCRIPT_URL =
+		'https://script.google.com/macros/s/AKfycbw90oTua6aedgd8N26UXMdwPQPrjAhIfrJJe_X5LtJD5_EcWL_IJBG3vk5N-UH2Jucm/exec'
 
 	openBtns.forEach(btn => {
 		btn.onclick = e => {
@@ -135,43 +152,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	if (closeBtn) closeBtn.onclick = hide
 
-	form.onsubmit = e => { 
-    e.preventDefault();
-    
-    const nameInput = document.getElementById('name');
-    const submitBtn = document.getElementById('submitBtn');
-    const nameError = document.getElementById('nameError');
-    const phoneError = document.getElementById('phoneError');
-    
-    const nameVal = nameInput.value.trim();
-    const isNameValid = nameVal.length >= 2; // Ism kamida 2 ta harf bo'lsin
-    const isPhoneValid = formatter.validate();
+	form.onsubmit = e => {
+		e.preventDefault()
 
-    if (nameError) nameError.style.display = isNameValid ? 'none' : 'block';
-    if (phoneError) phoneError.style.display = isPhoneValid ? 'none' : 'block';
+		const nameInput = document.getElementById('name')
+		const nameVal = nameInput.value.trim()
+		const phoneVal = formatter.getFullNumber()
 
-    if (!isNameValid || !isPhoneValid) {
-        return; 
-    }
+		// 1. FAQAT BITTA VA TO'G'RI URL QOLSIN
+		// Apps Script-dan olgan eng oxirgi URL-ni shu yerga qo'ying
+		const SCRIPT_URL =
+			'https://script.google.com/macros/s/AKfycbw90oTua6aedgd8N26UXMdwPQPrjAhIfrJJe_X5LtJD5_EcWL_IJBG3vk5N-UH2Jucm/exec'
 
-    // 1. Tugmani holatini o'zgartiramiz
-    submitBtn.disabled = true;
+		// 2. Tugmani o'chiramiz
+		const submitBtn = document.getElementById('submitBtn')
+		submitBtn.disabled = true
+		// 3. Ma'lumotni URL ga ulaymiz
+		const finalURL = `${SCRIPT_URL}?name=${encodeURIComponent(nameVal)}&phone=${encodeURIComponent(phoneVal)}`
 
-    const formData = new FormData();
-    formData.append('Ism', nameVal);
-    formData.append('Telefon raqam', formatter.getFullNumber());
-    formData.append("Royhatdan o'tgan vaqti", new Date().toLocaleString());
-
-    // 2. Fetch yuborish
-    fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors',
-        keepalive: true 
-    });
-
-    setTimeout(() => {
-        window.location.href = 'thankYou.html'; 
-    });
-};	
+		// 4. fetch ichida aynan finalURL ishlatilishi shart!
+		fetch(finalURL, {
+			method: 'GET',
+			mode: 'no-cors',
+		})
+			.then(() => {
+				console.log("Ma'lumot ketdi!")
+				window.location.href = 'thankYou.html'
+			}, 500)
+			.catch(err => {
+				console.error('Xatolik:', err)
+				submitBtn.disabled = false
+				submitBtn.innerText = 'DAVOM ETISH'
+			})
+	}
 })
