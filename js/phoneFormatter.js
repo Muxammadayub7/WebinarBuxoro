@@ -140,34 +140,38 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const nameInput = document.getElementById('name');
     const submitBtn = document.getElementById('submitBtn');
+    const nameError = document.getElementById('nameError');
+    const phoneError = document.getElementById('phoneError');
     
     const nameVal = nameInput.value.trim();
-    const isNameValid = !!nameVal;
+    const isNameValid = nameVal.length >= 2; // Ism kamida 2 ta harf bo'lsin
     const isPhoneValid = formatter.validate();
 
-    // Xatolarni ko'rsatish
-    document.getElementById('nameError').style.display = isNameValid ? 'none' : 'block';
-    document.getElementById('phoneError').style.display = isPhoneValid ? 'none' : 'block';
+    if (nameError) nameError.style.display = isNameValid ? 'none' : 'block';
+    if (phoneError) phoneError.style.display = isPhoneValid ? 'none' : 'block';
 
-    if (isNameValid && isPhoneValid) {
-        // 1. Tugmani srazi o'zgartiramiz
-        submitBtn.disabled = true;
-        const formData = new FormData();
-        formData.append('Ism', nameVal);
-        formData.append('Telefon raqam', formatter.getFullNumber());
-        formData.append("Royhatdan o'tgan vaqti", new Date().toLocaleString());
-
-        // 2. Fetch'ni yuboramiz va natijasini MUTLOQO kutmaymiz
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors',
-            keepalive: true 
-        });
-
-        setTimeout(() => {
-            window.location.replace('thankYou.html'); // replace ishlatish tezroq va qaytib bo'lmaydi
-        }); 
+    if (!isNameValid || !isPhoneValid) {
+        return; 
     }
-};
+
+    // 1. Tugmani holatini o'zgartiramiz
+    submitBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('Ism', nameVal);
+    formData.append('Telefon raqam', formatter.getFullNumber());
+    formData.append("Royhatdan o'tgan vaqti", new Date().toLocaleString());
+
+    // 2. Fetch yuborish
+    fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors',
+        keepalive: true 
+    });
+
+    setTimeout(() => {
+        window.location.href = 'thankYou.html'; 
+    });
+};	
 })

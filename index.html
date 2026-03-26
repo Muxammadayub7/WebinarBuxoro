@@ -6,7 +6,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>a</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}.hero{padding-bottom:15px}.hero__container{padding-top:11px;max-width:440px;margin-left:auto;margin-right:auto}.hero__date{font-family:MontserratMedium;font-weight:400;font-size:15px;line-height:100%;text-align:center;margin-bottom:18px;border:1px solid #03a7b2;max-width:179px;width:100%;margin-left:auto;margin-right:auto;padding:8px;border-radius:50px}.title{font-family:Bebas;font-weight:400;font-size:clamp(30px, 8vw, 46px);line-height:110.00000000000001%;text-align:center;color:#000;margin-bottom:4px}.title span{color:#00a3ae}.center{background-image:url(../images/hero/wrapper.avif);position:relative}.wrapper{border:1px solid #03a7b2;padding:16px 18px 30px 18px;max-width:330px;backdrop-filter:blur(20px);border-radius:20px;margin-top:-116px;margin-left:auto;margin-right:auto;z-index:1}.logo{display:flex;margin-left:auto;margin-right:auto}.center__btn{font-family:Bebas;font-weight:400;font-size:clamp(26px, 7vw, 32px);line-height:100%;text-transform:uppercase;padding:26px 37px 23px 37px;display:flex;align-items:center;gap:8px;margin-left:auto;margin-right:auto;background-color:#03a7b2;border:none;color:#fff;box-shadow:0 4px 0 0 #026a71;border-radius:20px;cursor:pointer}.flex{background-color:#ecfeff;margin-top:-15px;position:relative;padding:12px 0;display:flex;align-items:center;gap:8px;margin-bottom:10px;overflow:hidden;width:100%}.flex__container{display:flex;align-items:center;gap:8px;width:max-content;animation:scroll-left 15s linear infinite}.flex__text{display:flex;align-items:center;gap:10px;font-family:'Bebas',sans-serif;font-weight:400;font-size:20px;line-height:100%;text-transform:uppercase;color:#000;white-space:nowrap}.flex__text::before{content:'';width:8px;height:8px;background-color:#03a7b2;border-radius:50%;flex-shrink:0}@keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.hero__bottom{display:flex;align-items:center;justify-content:center;gap:7px;max-width:334px;width:100%;margin-left:auto;margin-right:auto;border:1px solid #03a7b2;padding:9px 10px 10px 10px;border-radius:20px}.gift{max-width:77px;width:100%;min-height:80px}.hero__bottom__title{font-family:MontserratBlack;font-weight:900;font-size:20px;line-height:23px;text-transform:uppercase}.hero__bottom__text{font-family:MontserratMedium;font-weight:400;font-size:clamp(11px, 2vw, 15px);line-height:150%}.timer{font-family:Helvetica;font-weight:400;font-size:25px;line-height:100%;text-align:center;text-transform:uppercase;margin-top:14px}.work{padding-top:0;padding-bottom:32px;padding-left:20px;padding-right:20px}.work__row{max-width:388px;width:100%;margin-left:auto;margin-right:auto;border:1px solid #000;margin-bottom:16px;padding:8px 17px 8px 18px;display:flex;align-items:center;gap:10px;border-radius:100px}.work__title{font-family:Bebas;font-weight:400;font-size:60px;line-height:100%;position:relative}.sticky{position:absolute;top:20px;left:-4px}.work__text{font-family:MontserratMedium;font-weight:400;font-size:clamp(10px, 3vw, 15px);line-height:150%}.work__btn{font-family:Bebas;font-weight:400;font-size:clamp(26px, 7vw, 32px);line-height:100%;text-transform:uppercase;padding:26px 37px 23px 37px;display:flex;align-items:center;justify-content:center;gap:8px;margin-left:auto;margin-right:auto;background-color:#03a7b2;border:none;color:#fff;box-shadow:0 4px 0 0 #026a71;border-radius:20px;cursor:pointer;max-width:358px;width:100%}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    .hero {
+      padding-bottom: 15px
+    }
+
+    .hero__container {
+      padding-top: 11px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .hero__date {
+      font-family: MontserratMedium;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 100%;
+      text-align: center;
+      margin-bottom: 18px;
+      border: 1px solid #03a7b2;
+      max-width: 179px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 8px;
+      border-radius: 50px
+    }
+
+    .title {
+      font-family: Bebas;
+      font-weight: 400;
+      font-size: clamp(30px, 8vw, 46px);
+      line-height: 110.00000000000001%;
+      text-align: center;
+      color: #000;
+      margin-bottom: 4px
+    }
+
+    .title span {
+      color: #00a3ae
+    }
+
+    .center {
+      background-image: url(../images/hero/wrapper.avif);
+      position: relative
+    }
+
+    .wrapper {
+      border: 1px solid #03a7b2;
+      padding: 16px 18px 30px 18px;
+      max-width: 330px;
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      margin-top: -116px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1
+    }
+
+    .logo {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .center__btn {
+      font-family: Bebas;
+      font-weight: 400;
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 100%;
+      text-transform: uppercase;
+      padding: 26px 37px 23px 37px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #03a7b2;
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 0 0 #026a71;
+      border-radius: 20px;
+      cursor: pointer
+    }
+
+    .flex {
+      background-color: #ecfeff;
+      margin-top: -15px;
+      position: relative;
+      padding: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      width: 100%
+    }
+
+    .flex__container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: max-content;
+      animation: scroll-left 15s linear infinite
+    }
+
+    .flex__text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Bebas', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #000;
+      white-space: nowrap
+    }
+
+    .flex__text::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: #03a7b2;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    .hero__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      max-width: 334px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #03a7b2;
+      padding: 9px 10px 10px 10px;
+      border-radius: 20px
+    }
+
+    .gift {
+      max-width: 77px;
+      width: 100%;
+      min-height: 80px
+    }
+
+    .hero__bottom__title {
+      font-family: MontserratBlack;
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 23px;
+      text-transform: uppercase
+    }
+
+    .hero__bottom__text {
+      font-family: MontserratMedium;
+      font-weight: 400;
+      font-size: clamp(11px, 2vw, 15px);
+      line-height: 150%
+    }
+
+    .timer {
+      font-family: Helvetica;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 14px
+    }
+
+    .work {
+      padding-top: 0;
+      padding-bottom: 32px;
+      padding-left: 20px;
+      padding-right: 20px
+    }
+
+    .work__row {
+      max-width: 388px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #000;
+      margin-bottom: 16px;
+      padding: 8px 17px 8px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 100px
+    }
+
+    .work__title {
+      font-family: Bebas;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 100%;
+      position: relative
+    }
+
+    .sticky {
+      position: absolute;
+      top: 20px;
+      left: -4px
+    }
+
+    .work__text {
+      font-family: MontserratMedium;
+      font-weight: 400;
+      font-size: clamp(10px, 3vw, 15px);
+      line-height: 150%
+    }
+
+    .work__btn {
+      font-family: Bebas;
+      font-weight: 400;
+      font-size: clamp(26px, 7vw, 32px);
+      line-height: 100%;
+      text-transform: uppercase;
+      padding: 26px 37px 23px 37px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #03a7b2;
+      border: none;
+      color: #fff;
+      box-shadow: 0 4px 0 0 #026a71;
+      border-radius: 20px;
+      cursor: pointer;
+      max-width: 358px;
+      width: 100%
+    }
   </style>
   <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
   <noscript>
@@ -42,7 +293,8 @@
         </div>
       </div>
       <div class="hero__bottom">
-        <img src="./images/hero/gift.avif" alt="gift" width="77" height="80" loading="lazy" decoding="async" class="gift">
+        <img src="./images/hero/gift.avif" alt="gift" width="77" height="80" loading="lazy" decoding="async"
+          class="gift">
         <div>
           <h3 class="hero__bottom__title">maxsus sovg’a</h3>
           <p class="hero__bottom__text">Birinchi 10 ta xaridorlarimiz <br> uchun <b>6 000$ real chegirma!</b> </p>
@@ -55,22 +307,28 @@
   </section>
 
   <section class="work">
-      <div class="work__container">
-        <div class="work__row">
-          <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13" loading="lazy" decoding="async">01</h1>
-          <p class="work__text"> <b>Loyihaning to'liq taqdimoti.</b> Render, reja, infratuzilma — hamma narsa birinchi marta, yashirin eshik orqali</p>
-        </div>
-        <div class="work__row">
-          <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13" loading="lazy" decoding="async">02</h1>
-          <p class="work__text"> <b>Bo'lib to'lash, boshlang'ich to'lov miqdori,</b> maxsus shart-sharoitlar haqida ma’lumotlar olasiz</p>
-        </div>
-        <div class="work__row">
-          <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13" loading="lazy" decoding="async">03</h1>
-          <p class="work__text"> Birinchi xaridorlarimiz uchun <br> <b>maishiy texnika to’plamlarini <br> sovg’a</b> qilamiz</p>
-        </div>
-        <button class="work__btn" id="open">Bepul Qatnashish <img src="./images/hero/submit.svg" alt="submit"
-              width="17" height="21" loading="lazy"></button>
+    <div class="work__container">
+      <div class="work__row">
+        <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13"
+            loading="lazy" decoding="async">01</h1>
+        <p class="work__text"> <b>Loyihaning to'liq taqdimoti.</b> Render, reja, infratuzilma — hamma narsa birinchi
+          marta, yashirin eshik orqali</p>
       </div>
+      <div class="work__row">
+        <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13"
+            loading="lazy" decoding="async">02</h1>
+        <p class="work__text"> <b>Bo'lib to'lash, boshlang'ich to'lov miqdori,</b> maxsus shart-sharoitlar haqida
+          ma’lumotlar olasiz</p>
+      </div>
+      <div class="work__row">
+        <h1 class="work__title"><img src="./images/hero/sticky.svg" class="sticky" alt="sticky" width="13" height="13"
+            loading="lazy" decoding="async">03</h1>
+        <p class="work__text"> Birinchi xaridorlarimiz uchun <br> <b>maishiy texnika to’plamlarini <br> sovg’a</b>
+          qilamiz</p>
+      </div>
+      <button class="work__btn" id="open">Bepul Qatnashish <img src="./images/hero/submit.svg" alt="submit" width="17"
+          height="21" loading="lazy"></button>
+    </div>
   </section>
 
   <div id="registrationModal" class="homeModal" style="display: none">
@@ -83,43 +341,65 @@
       </button>
       <div class="homeFormTop">
         <h1 class="homeFormTopTitle">
-          Ro'yxatdan o'tish uchun <br> ma'lumotlaringizni kiriting!
+          Ro'yxatdan o'tish uchun ma'lumotlaringizni kiriting!
         </h1>
       </div>
       <form id="registrationForm" name="contact-form">
+        <!-- ISM -->
         <div class="HomeFormRow">
           <label class="HomeFormRowLabel" for="name">Ismingiz:</label>
           <input class="HomeFormRowInput" type="text" id="name" name="name" placeholder="Ismingizni kiriting"
             autocomplete="name" />
-          <p class="homeFormErrorText" id="nameError" style="display: none">❌ Ismingizni kiriting!</p>
+          <p class="homeFormErrorText" id="nameError" style="display: none">
+            ❌ Ismingizni kiriting!
+          </p>
         </div>
 
+        <!-- TELEFON -->
         <div class="HomeFormRow">
           <label class="HomeFormRowLabel" for="phone">Telefon raqamingiz:</label>
+
           <div class="phone-input-container">
+            <!-- LEFT: country -->
             <button type="button" class="selected-country" id="selectedCountry">
-              <div id="selectedCountryFlag" style="display: flex; align-items: center;"></div>
+              <span class="selected-flag" id="selectedCountryFlag">🇺🇿</span>
+
+              <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
               <span class="selected-code" id="selectedCountryCodeText">+998</span>
             </button>
+
+            <!-- dropdown -->
             <div class="country-dropdown" id="countryDropdown" style="display:none"></div>
-            <div class="phone-field" style="flex: 1;">
+
+            <!-- RIGHT: phone input (number span inside) -->
+            <div class="phone-field">
               <input class="HomeFormRowInput phone-input" type="tel" id="phone" name="phone" inputmode="numeric"
                 placeholder="88 888 88 88" autocomplete="tel"
-                style="border: none; background-color: transparent; padding-left: 5px; width: 100%;" />
+                style="border: none; background-color: transparent;padding-left: 5px;" />
             </div>
           </div>
-          <p class="homeFormErrorText" id="phoneError" style="display:none">❌ Telefon raqam mos emas!</p>
+
+          <p class="homeFormErrorText" id="phoneError" style="display:none">
+            ❌ Telefon raqam mos emas!
+          </p>
         </div>
 
-        <button type="submit" class="HomeFormBtn" id="submitBtn">DAVOM ETISH</button>
+
+        <button type="submit" class="HomeFormBtn" id="submitBtn">
+          DAVOM ETISH
+        </button>
       </form>
+
     </div>
   </div>
 
+
   <script defer src="./js/main.js"></script>
-  <script defer src="./js/phoneFormatter.js"></script>
   <script defer src="./js/app.js"></script>
-  <script src="./js/thankYou.js"></script>
+  <script defer src="./js/phoneFormatter.js"></script>
 
 </body>
 
