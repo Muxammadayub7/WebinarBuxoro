@@ -8,22 +8,29 @@ function doPost(e) {
 
     const text = `📥 Yangi lead!\n\n👤 Ism: ${name}\n📞 Tel: ${phone}\n⏰ Vaqt: ${new Date().toLocaleString('uz-UZ')}`;
 
-    // GET usuli bilan sinaymiz (ko'pincha barqarorroq)
+    // GET usuli bilan yuborish (hozirgi paytda eng yaxshi ishlaydi)
     const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
 
-    const response = UrlFetchApp.fetch(url, {
-      muteHttpExceptions: true
+    const response = UrlFetchApp.fetch(url, { 
+      muteHttpExceptions: true 
     });
 
     const result = response.getContentText();
-    console.log("Telegram javobi: " + result);   // Apps Script Logger da ko'rinadi
     Logger.log("Telegram javobi: " + result);
+    console.log("Telegram javobi: " + result);
 
-    return ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
+    return ContentService.createTextOutput("OK")
+                         .setMimeType(ContentService.MimeType.TEXT);
 
   } catch (error) {
-    console.error("Xatolik: ", error);
-    Logger.log("Xatolik: " + error);
-    return ContentService.createTextOutput("Error").setMimeType(ContentService.MimeType.TEXT);
+    Logger.log("Xatolik: " + error.toString());
+    console.error("Xatolik:", error);
+    return ContentService.createTextOutput("Error")
+                         .setMimeType(ContentService.MimeType.TEXT);
   }
+}
+
+// Agar test qilish uchun kerak bo'lsa
+function doGet(e) {
+  return ContentService.createTextOutput("Server ishlamoqda!");
 }
