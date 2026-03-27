@@ -1,52 +1,29 @@
-async function sendData(e) {
-    if (e) e.preventDefault();
+const TELEGRAM_TOKEN = "8651201120:AAFPICb43540D0zuz6aDlHXNxDKthVZLGtw";
+const CHAT_ID = "8482529498";
 
-    const nameInput = document.getElementById("name");
-    const phoneInput = document.getElementById("phone");
-    
-    if (!nameInput.value || !phoneInput.value) {
-        alert("Iltimos, ism va telefonni kiriting!");
-        return;
-    }
+function doPost(e) {
+  try {
+    const name  = e.parameter.name  || "Noma'lum";
+    const phone = e.parameter.phone || "Noma'lum";
 
-    const name = nameInput.value;
-    const phone = phoneInput.value;
+    const text = `📥 Yangi lead!\n\n👤 Ism: ${name}\n📞 Tel: ${phone}\n⏰ Vaqt: ${new Date().toLocaleString('uz-UZ')}`;
 
-    const token = "8651201120:AAFPICb43540D0zuz6aDlHXNxDKthVZLGtw";
-    const chat_id = "8482529498";
-    
-    // Matnni URL formatiga moslab tayyorlaymiz
-    const message = encodeURIComponent(`📥 *Yangi lead!*\n👤 Ism: ${name}\n📞 Tel: ${phone}`);
+    // GET usuli bilan sinaymiz (ko'pincha barqarorroq)
+    const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
 
-    // 1. TELEGRAMGA YUBORISH (Eng ishonchli GET usuli)
-    const telegramUrl = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=Markdown`;
+    const response = UrlFetchApp.fetch(url, {
+      muteHttpExceptions: true
+    });
 
-    try {
-        const response = await fetch(telegramUrl);
-        const resData = await response.json();
+    const result = response.getContentText();
+    console.log("Telegram javobi: " + result);   // Apps Script Logger da ko'rinadi
+    Logger.log("Telegram javobi: " + result);
 
-        if (resData.ok) {
-            console.log("Telegram ok! ✅");
-        } else {
-            // AGAR SHU YERDA XATO CHIQSA: Chat ID yoki Botda muammo bor
-            alert("Bot xatosi: " + resData.description);
-            return; // Botga bormasa, alert berib to'xtatamiz
-        }
-    } catch (err) {
-        console.error("Telegram error:", err);
-    }
+    return ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
 
-    // 2. SHEETSGA YUBORISH
-    const SHEETS_URL = "https://script.google.com/macros/s/AKfycbw90oTua6aedgd8N26UXMdwPQPrjAhIfrJJe_X5LtJD5_EcWL_IJBG3vk5N-UH2Jucm/exec";
-    
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-
-    // Sheets-ga yuborishni orqa fonda qoldiramiz
-    fetch(SHEETS_URL, { method: "POST", body: formData, mode: 'no-cors' });
-
-    alert("Muvaffaqiyatli yuborildi!");
-    nameInput.value = "";
-    phoneInput.value = "";
+  } catch (error) {
+    console.error("Xatolik: ", error);
+    Logger.log("Xatolik: " + error);
+    return ContentService.createTextOutput("Error").setMimeType(ContentService.MimeType.TEXT);
+  }
 }
