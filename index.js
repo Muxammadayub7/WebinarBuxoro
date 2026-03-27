@@ -37,7 +37,7 @@ async function sendData(e) {
         return;
     }
 
-    const PROXY_URL = "https://script.google.com/macros/s/SIZNING_URL/exec";  // ← yangi URL ni qo'y
+    const PROXY_URL = "https://script.google.com/macros/s/AKfycbw90oTua6aedgd8N26UXMdwPQPrjAhIfrJJe_X5LtJD5_EcWL_IJBG3vk5N-UH2Jucm/exec";  // ← yangi URL ni qo'y
 
     const formData = new FormData();
     formData.append("name", name);
